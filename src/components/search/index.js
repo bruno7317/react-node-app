@@ -1,9 +1,19 @@
-import { useState } from "react";
-import { booksDatabase } from './searchData'
+import { useEffect, useState } from "react";
+import { getBooks } from "../../services/books";
 
 function Search() {
     const [searchTerm, setSearchTerm] = useState([])
+    const [books, setBooks] = useState([])
 
+    useEffect(() => {
+        fetchBooks()
+    }, [])
+
+    async function fetchBooks() {
+        const booksFromAPI = getBooks()
+        setBooks(booksFromAPI)
+    }
+    
     return (
         <section>
             <h2>Let's get started.</h2>
@@ -12,7 +22,7 @@ function Search() {
                 placeholder="What are you reading next?"
                 onBlur={event => {
                     const searchTerm = event.target.value
-                    const searchResult = booksDatabase.filter( entry => entry.title.includes(searchTerm))
+                    const searchResult = books.filter( entry => entry.title.includes(searchTerm))
                     setSearchTerm(searchResult)
                 }}
             />

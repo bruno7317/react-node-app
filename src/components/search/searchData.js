@@ -1,0 +1,42 @@
+export const booksDatabase = [
+    {
+      id: 1,
+      title: "The Pragmatic Programmer",
+      author: "Andrew Hunt, David Thomas",
+      genre: "Technology",
+      publishedYear: 1999,
+      available: true,
+    },
+    {
+      id: 2,
+      title: "Clean Code",
+      author: "Robert C. Martin",
+      genre: "Technology",
+      publishedYear: 2008,
+      available: false,
+    },
+    {
+      id: 3,
+      title: "1984",
+      author: "George Orwell",
+      genre: "Dystopian",
+      publishedYear: 1949,
+      available: true,
+    },
+    {
+      id: 4,
+      title: "The Hobbit",
+      author: "J.R.R. Tolkien",
+      genre: "Fantasy",
+      publishedYear: 1937,
+      available: true,
+    },
+    {
+      id: 5,
+      title: "Sapiens: A Brief History of Humankind",
+      author: "Yuval Noah Harari",
+      genre: "History",
+      publishedYear: 2011,
+      available: false,
+    },
+  ];

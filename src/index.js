@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Home from './routes/Home';
+import Favorites from './routes/Favorites'
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Router, Route, Routes } from "react-router-dom"
+import Header from './components/header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

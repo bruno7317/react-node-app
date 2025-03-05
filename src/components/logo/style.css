@@ -1,0 +1,12 @@
+.logo {
+    display: flex;
+    font-size: 2rem;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.strong {
+    font-family: var(--font-family);
+    font-weight: 600;
+}

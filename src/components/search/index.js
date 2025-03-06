@@ -10,7 +10,7 @@ function Search() {
     }, [])
 
     async function fetchBooks() {
-        const booksFromAPI = getBooks()
+        const booksFromAPI = await getBooks()
         setBooks(booksFromAPI)
     }
     

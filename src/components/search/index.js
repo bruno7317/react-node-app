@@ -1,5 +1,8 @@
+import './style.css'
+
 import { useEffect, useState } from "react";
 import { getBooks } from "../../services/books";
+import { postFavorite } from "../../services/favorites";
 
 function Search() {
     const [searchTerm, setSearchTerm] = useState([])
@@ -12,6 +15,10 @@ function Search() {
     async function fetchBooks() {
         const booksFromAPI = await getBooks()
         setBooks(booksFromAPI)
+    }
+
+    async function insertFavorite(id) {
+        await postFavorite(id)
     }
     
     return (
@@ -27,7 +34,7 @@ function Search() {
                 }}
             />
             { searchTerm.map( (book) => (
-                <ul>
+                <ul onClick={() => insertFavorite(book.id)} className="book_card">
                     <li><p>{book.title}</p></li>
                     <li><p>{book.author}</p></li>
                     <li><p>{book.genre}</p></li>

@@ -1,0 +1,7 @@
+.book_card {
+    cursor: pointer;
+}
+
+.book_card:hover {
+    color: aliceblue;
+}
